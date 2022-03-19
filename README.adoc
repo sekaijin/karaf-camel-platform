@@ -28,3 +28,5 @@ ID │ State  │ Lvl │ Version │ Name
 79 │ Active │  80 │ 3.15.0  │ camel-commands-core
 81 │ Active │  80 │ 3.15.0  │ camel-karaf-commands
 ----
+
+include::src/main/docs/camel-plateform.adoc
