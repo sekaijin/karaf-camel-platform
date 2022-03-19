@@ -1,0 +1,10 @@
+== Karaf Camel distribution
+
+Karaf Camel is available as basic distribution ready to run.
+
+You can download this package, unzip it and run 
+[source,sh]
+----
+> ./bin/karaf
+----
+After start, you can deploy your routes définitions.

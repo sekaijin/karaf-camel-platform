@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--
+
+        Licensed to the Apache Software Foundation (ASF) under one or more
+        contributor license agreements.  See the NOTICE file distributed with
+        this work for additional information regarding copyright ownership.
+        The ASF licenses this file to You under the Apache License, Version 2.0
+        (the "License"); you may not use this file except in compliance with
+        the License.  You may obtain a copy of the License at
+
+           http://www.apache.org/licenses/LICENSE-2.0
+
+        Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an "AS IS" BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        See the License for the specific language governing permissions and
+        limitations under the License.
+    -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.apache.camel.karaf</groupId>
+        <artifactId>karaf</artifactId>
+        <version>3.15.0</version>
+    </parent>
+
+    <artifactId>karaf-camel-platform</artifactId>
+    <name>Apache Camel :: Karaf :: Platform</name>
+    <packaging>karaf-assembly</packaging>
+
+    <properties>
+        <karaf-version>4.3.6</karaf-version>
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.karaf.features</groupId>
+            <artifactId>framework</artifactId>
+            <version>${karaf-version}</version>
+            <type>kar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.karaf.features</groupId>
+            <artifactId>standard</artifactId>
+            <version>${karaf-version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.karaf.features</groupId>
+            <artifactId>spring</artifactId>
+            <version>${karaf-version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel.karaf</groupId>
+            <artifactId>apache-camel</artifactId>
+            <version>${project.version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+    <resources>
+      <resource>
+        <directory>src/main/filtered-resources</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>**/*</include>
+        </includes>
+      </resource>
+    </resources>
+    <plugins>
+            <plugin>
+                <groupId>org.apache.karaf.tooling</groupId>
+                <artifactId>karaf-maven-plugin</artifactId>
+            <version>${karaf-version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <finalName>${project.artifactId}</finalName>
+                    <installedBundles>
+                        <installedBundle>mvn:commons-lang/commons-lang/2.6</installedBundle>
+                    </installedBundles>
+                    <bootFeatures>
+                        <feature>bundle</feature>
+                        <feature>config</feature>
+                        <feature>diagnostic</feature>
+                        <feature>feature</feature>
+                        <feature>jaas</feature>
+                        <feature>shell</feature>
+                        <feature>log</feature>
+                        <feature>management</feature>
+                        <feature>package</feature>
+                        <feature>shell-compat</feature>
+                        <feature>ssh</feature>
+                        <feature>system</feature>
+                        <feature>wrap</feature>
+                        <feature>camel</feature>
+                    </bootFeatures>
+                    <installedFeatures>
+                        <feature>spring</feature>
+                        <feature>camel-spring</feature>
+                        <feature>camel-http</feature>
+                        <feature>camel-jdbc</feature>
+                        <feature>camel-jetty</feature>
+                        <feature>camel-jpa</feature>
+                        <feature>camel-jms</feature>
+                        <feature>camel-ftp</feature>
+                        <feature>camel-kafka</feature>
+                        <feature>camel-mllp</feature>
+                        <feature>camel-xslt</feature>
+                        <feature>camel-base64</feature>
+                        <feature>camel-bindy</feature>
+                        <feature>camel-csv</feature>
+                        <feature>camel-fhir</feature>
+                        <feature>camel-jackson</feature>
+                        <feature>camel-jaxb</feature>
+                    </installedFeatures>
+                    <archiveZip>false</archiveZip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
