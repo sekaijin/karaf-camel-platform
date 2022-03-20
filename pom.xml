@@ -53,6 +53,14 @@
         </dependency>
         <dependency>
             <groupId>org.apache.karaf.features</groupId>
+            <artifactId>enterprise</artifactId>
+            <version>${karaf-version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.karaf.features</groupId>
             <artifactId>spring</artifactId>
             <version>${karaf-version}</version>
             <classifier>features</classifier>
@@ -63,6 +71,14 @@
             <groupId>org.apache.camel.karaf</groupId>
             <artifactId>apache-camel</artifactId>
             <version>${project.version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>artemis-features</artifactId>
+            <version>2.20.0</version>
             <classifier>features</classifier>
             <type>xml</type>
             <scope>runtime</scope>
@@ -121,9 +137,11 @@
                         <feature>camel-base64</feature>
                         <feature>camel-bindy</feature>
                         <feature>camel-csv</feature>
+                        <feature>camel-cxf</feature>
                         <feature>camel-fhir</feature>
                         <feature>camel-jackson</feature>
                         <feature>camel-jaxb</feature>
+                        <feature>artemis</feature>
                     </installedFeatures>
                     <archiveZip>false</archiveZip>
                 </configuration>
