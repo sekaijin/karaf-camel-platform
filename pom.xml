@@ -86,20 +86,20 @@
     </dependencies>
 
     <build>
-    <resources>
-      <resource>
-        <directory>src/main/filtered-resources</directory>
-        <filtering>true</filtering>
-        <includes>
-          <include>**/*</include>
-        </includes>
-      </resource>
-    </resources>
-    <plugins>
+        <resources>
+            <resource>
+                <directory>src/main/filtered-resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
-            <version>${karaf-version}</version>
+                <version>${karaf-version}</version>
                 <extensions>true</extensions>
                 <configuration>
                     <finalName>${project.artifactId}</finalName>
