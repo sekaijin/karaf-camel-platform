@@ -123,13 +123,13 @@
                         <feature>camel</feature>
                     </bootFeatures>
                     <installedFeatures>
-                        <feature>spring</feature>
-                        <feature>camel-spring</feature>
+                        <!--<feature>spring</feature>
+                        <feature>camel-spring</feature>-->
                         <feature>camel-http</feature>
                         <feature>camel-jdbc</feature>
                         <feature>camel-jetty</feature>
                         <feature>camel-jpa</feature>
-                        <feature>camel-jms</feature>
+                        <feature>camel-sjms</feature>
                         <feature>camel-ftp</feature>
                         <feature>camel-kafka</feature>
                         <feature>camel-mllp</feature>
